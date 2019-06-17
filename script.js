@@ -7,7 +7,7 @@ getRandomCorgi();
 
 function getRandomCorgi(){
 	console.log("Random corgi of the day");
-  fetch('https://dog.ceo/api/breed/Pembroke/images/random')
+  fetch('https://dog.ceo/api/breed/pembroke/images/random')
     .then(checkStatus)
     .then(response => response.json())
     .then(data => handleData(data))
@@ -53,12 +53,14 @@ function checkStatus(response){
 
 function notifyUser(error){
   const errorContainer = document.querySelector('.alert');
-  errorContainer.innerHTML = `There was an error with the server request (${error}). <br> Click the button again.`;
+  errorContainer.innerHTML = `There was an error with the server request (${error}).`;
   errorContainer.style.display = 'block';
   setTimeout(()=>{
     errorContainer.innerHTML = '';
     errorContainer.style.display ='none';
   },4000)
+  
+  
 }
 
 function startTimer(duration, display) {
@@ -74,10 +76,10 @@ function startTimer(duration, display) {
 
         if (--timer < 0) 
         {
-            
+            isWork = false;
         	var audio = new Audio('Dog Woof-SoundBible.com.mp3');
                     audio.play();
-            if(isWork == false)
+            if(isWork == true)
             {
         	    //timer = duration;
         	    timer = 25 * 60;

@@ -1,6 +1,6 @@
-# Project Title
+# Corgi Pomodoro
 
-One Paragraph of project description goes here
+It's like a regular pomodoro, only there are open source corgis using the doge api
 
 ## Getting Started
 
