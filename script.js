@@ -26,20 +26,7 @@ function handleData(data){
   document.querySelector('.dogInfo').innerHTML = `<p class="h5">Random image of a corgi</p>`;
 }
 
-//fixBreed
-function fixBreed(breedName){
-  
-  breedName === 'corgi';
-  return capitalize(breedName);
-}
 
-//capitalize breed name
-function capitalize(breedName){
-  return breedName.replace(/\-/g,' ')
-                  .split(" ")
-                  .map(word => word.charAt(0).toUpperCase()+word.slice(1))
-				          .join(" ");
-}
 
 //HELPER FUNCTIONS
 //checkStatus
@@ -83,6 +70,7 @@ function startTimer(duration, display) {
             {
         	    //timer = duration;
         	    timer = 25 * 60;
+        	    //timer = 2 * 60;
         	    isWork = false;
         	    getRandomCorgi();
 
@@ -90,6 +78,7 @@ function startTimer(duration, display) {
             else
             {
             	timer = 5 * 60;
+            	//timer = 1 * 60;
             	isWork = true;
             	getRandomCorgi();
             }
@@ -100,6 +89,8 @@ function startTimer(duration, display) {
 window.onload = function () {
 
     var twentyFiveMinutes = 60 * 25,
+    //var twentyFiveMinutes = .1 * 25,
         display = document.querySelector('#time');
     startTimer(twentyFiveMinutes, display);
+    isWork = false;
 };
