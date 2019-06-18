@@ -18,15 +18,10 @@ function getRandomCorgi(){
 function handleData(data){
   let url = data.message;
   console.log(url)
-  let regex = /https:\/\/images\.dog\.ceo\/breeds\/(\w+\-?\w+)\/.+/g;
-  //let breedName = regex.exec(url);
   let breedName = 'corgi';
-
   document.getElementById('randomImageContainer').innerHTML = `<img alt="random image of a corgi" src='${url}'/>`;
   document.querySelector('.dogInfo').innerHTML = `<p class="h5">Random image of a corgi</p>`;
 }
-
-
 
 //HELPER FUNCTIONS
 //checkStatus
