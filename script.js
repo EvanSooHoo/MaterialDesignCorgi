@@ -1,7 +1,7 @@
 //Heavily taken from open source codepen submission by Kostas https://codepen.io/kkoutoup/pen/wjZXPw
 
 const randomButton = document.querySelector('.random');
-var isWork = false;
+var isWork = true;
 
 getRandomCorgi();
 
@@ -76,21 +76,21 @@ function startTimer(duration, display) {
 
         if (--timer < 0) 
         {
-            isWork = false;
+            console.log("Timer is at 0. The value of isWork is " + isWork);
         	var audio = new Audio('Dog Woof-SoundBible.com.mp3');
                     audio.play();
             if(isWork == true)
             {
         	    //timer = duration;
         	    timer = 25 * 60;
-        	    isWork = true;
+        	    isWork = false;
         	    getRandomCorgi();
 
             }
             else
             {
             	timer = 5 * 60;
-            	isWork = false;
+            	isWork = true;
             	getRandomCorgi();
             }
         }
