@@ -4,13 +4,56 @@
 
   
   <link rel="stylesheet" type="text/css" href="layout.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <div class="page">
     <header>
       <center><h1>Corgi Pomodoro</h1></center>
     </header>
+    <section id="app" class="hero is-info is-fullheight is-bold">
+    <div class="hero-body">
+        <div class="container has-text-centered">
 
+            <h2 class="title is-6">Let the countdown begin!!</h2>
+
+            <!--  THE TIMER NUMBERS  -->
+            <div id="timer">
+                <span id="minutes"></span>
+                <span id="middle">:</span>
+                <span id="seconds"></span>
+            </div>
+
+            <!--  THE BUTTONS  -->
+            <div id="buttons">
+
+                <!--  START BUTTON    -->
+                <button
+                        id="start"
+                        class="button is-dark is-large">
+                    <i class="fa fa-play-circle" style="font-size:48px;color:red"></i>
+                </button>
+
+                <!--   PAUSE BUTTON   -->
+                <button
+                        id="stop"
+                        class="button is-dark is-large">
+                    <!--<i id="icon-pause" class="far fa-pause-circle"></i> -->
+                    <i class="fa fa-pause"></i>
+                </button>
+
+                <!--  RESET BUTTON   -->
+                <button
+                        id="reset"
+                        class="button is-dark is-large">
+                    <!--<i class="fas fa-undo"></i>-->
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
     <!--<img src="MediumCorgi.jpg" alt="Corgi">-->
 
     <center><div>Time remaining <span id="time">25:00</span> minutes!</div></center>

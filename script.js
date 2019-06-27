@@ -1,5 +1,104 @@
 //Heavily taken from open source codepen submission by Kostas https://codepen.io/kkoutoup/pen/wjZXPw
 
+    window.timerStatus = -1; // timerStatus (-1 -> off; 1 -> on; 0 -> pause)
+    window.timerTick = setInterval(calculateTimer, 1000);
+    window.initialMinutes = 25;
+    window.initialSeconds = 0;
+    window.initialSecondsLeft = (parseInt(window.initialMinutes) * 60) + parseInt(window.initialSeconds);
+    window.timerSecondsLeft = window.initialSecondsLeft;
+
+    const btnStart = document.querySelector('#start');
+    const btnStop = document.querySelector('#stop');
+    const btnReset = document.querySelector('#reset');
+    const iconPause = document.querySelector('#icon-pause');
+    const minutes = document.querySelector('#minutes');
+    const seconds = document.querySelector('#seconds');
+    const title = document.querySelector('.title');
+
+    window.addEventListener('load', () => {
+        setInitialTimer();
+        setTimerSecondsLeft();
+    });
+
+    btnStart.addEventListener('click', () => {
+        btnStart.style.display = 'none';
+        btnStop.style.display = 'inline-block';
+        btnReset.style.display = 'inline-block';
+        window.timerStatus = 1;
+    });
+
+    btnStop.addEventListener('click', () => {
+        if (window.timerStatus === 1) {
+            iconPause.classList.remove('fa-pause-circle');
+            iconPause.classList.add('fa-play-circle');
+            window.timerStatus = 0;
+        } else if (window.timerStatus === 0) {
+            iconPause.classList.remove('fa-play-circle');
+            iconPause.classList.add('fa-pause-circle');
+            window.timerStatus = 1;
+        }
+    });
+
+    btnReset.addEventListener('click', () => {
+        window.timerStatus = -1;
+        btnStart.style.display = 'inline-block';
+        btnStop.style.display = 'none';
+        btnReset.style.display = 'none';
+        iconPause.classList.remove('fa-play-circle');
+        iconPause.classList.add('fa-pause-circle');
+        title.innerText = 'Let the countdown begin!!';
+        setInitialTimer();
+        setTimerSecondsLeft();
+    });
+
+    /**
+     * Set initial timer
+     */
+    function setInitialTimer() {
+        minutes.innerText = window.initialMinutes >= 10 ? window.initialMinutes : '0' + window.initialMinutes;
+        seconds.innerText = window.initialSeconds >= 10 ? window.initialSeconds : '0' + window.initialSeconds;
+    }
+
+    /**
+     * Set timer seconds left
+     */
+    function setTimerSecondsLeft() {
+        window.timerSecondsLeft = (parseInt(minutes.innerText) * 60) + parseInt(seconds.innerText);
+    }
+
+    /**
+     * Count down seconds
+     */
+    function calculateTimer() {
+        if (window.timerStatus === 1) {
+            window.timerSecondsLeft--;
+            upateTitle();
+        }
+        if (window.timerSecondsLeft >= 0) {
+            minutes.innerText = Math.floor(window.timerSecondsLeft / 60) >= 10 ? Math.floor(window.timerSecondsLeft / 60) : '0' + Math.floor(window.timerSecondsLeft / 60);
+            seconds.innerText = Math.floor(window.timerSecondsLeft % 60) >= 10 ? Math.floor(window.timerSecondsLeft % 60) : '0' + Math.floor(window.timerSecondsLeft % 60);
+        }
+    }
+
+    /**
+     * Update timer title
+     */
+    function upateTitle() {
+        if (window.timerSecondsLeft < window.initialSecondsLeft) {
+            title.innerText = 'Yeah...! Countdown has begun...';
+        }
+        if (window.timerSecondsLeft < window.initialSecondsLeft - 60) {
+            title.innerHTML = 'Wooohoo, one minute gone..'
+        }
+        if (window.timerSecondsLeft < window.initialSecondsLeft - 60 * 2) {
+            title.innerHTML = 'Wooohoo, countless minutes gone..'
+        }
+        if (window.timerSecondsLeft < window.initialSecondsLeft - 60 * 3) {
+            title.innerHTML = 'Wooohoo, countless minutes gone..'
+        }
+    }
+
+
 const randomButton = document.querySelector('.random');
 var isWork = true;
 
@@ -89,3 +188,4 @@ window.onload = function () {
     startTimer(twentyFiveMinutes, display);
     isWork = false;
 };
+
