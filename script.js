@@ -3,6 +3,7 @@
     window.timerStatus = -1; // timerStatus (-1 -> off; 1 -> on; 0 -> pause)
     window.timerTick = setInterval(calculateTimer, 1000);
     window.initialMinutes = 25;
+    //window.initialMinutes = 1;
     window.initialSeconds = 0;
     window.initialSecondsLeft = (parseInt(window.initialMinutes) * 60) + parseInt(window.initialSeconds);
     window.timerSecondsLeft = window.initialSecondsLeft;
@@ -46,7 +47,7 @@
         btnReset.style.display = 'none';
         iconPause.classList.remove('fa-play-circle');
         iconPause.classList.add('fa-pause-circle');
-        title.innerText = 'Let the countdown begin!!';
+        //title.innerText = 'Let the countdown begin!!';
         setInitialTimer();
         setTimerSecondsLeft();
     });
@@ -78,6 +79,33 @@
             minutes.innerText = Math.floor(window.timerSecondsLeft / 60) >= 10 ? Math.floor(window.timerSecondsLeft / 60) : '0' + Math.floor(window.timerSecondsLeft / 60);
             seconds.innerText = Math.floor(window.timerSecondsLeft % 60) >= 10 ? Math.floor(window.timerSecondsLeft % 60) : '0' + Math.floor(window.timerSecondsLeft % 60);
         }
+
+        if (window.timerSecondsLeft < 0) 
+        {
+            console.log("Timer is at 0. The value of isWork is " + isWork);
+        	var audio = new Audio('Dog Woof-SoundBible.com.mp3');
+                    audio.play();
+            if(isWork == true)
+            {
+        	    //timer = duration;
+        	    timer = 25 * 60;
+        	    window.timerSecondsLeft = 25 * 60;
+        	    //window.timerSecondsLeft = 30;
+        	    //timer = 2 * 60;
+        	    isWork = false;
+        	    getRandomCorgi();
+
+            }
+            else
+            {
+            	timer = 5 * 60;
+            	window.timerSecondsLeft = 5 * 60;
+            	//window.timerSecondsLeft = 5;
+            	//timer = 1 * 60;
+            	isWork = true;
+            	getRandomCorgi();
+            }
+        }
     }
 
     /**
@@ -85,16 +113,16 @@
      */
     function upateTitle() {
         if (window.timerSecondsLeft < window.initialSecondsLeft) {
-            title.innerText = 'Yeah...! Countdown has begun...';
+            //title.innerText = 'Yeah...! Countdown has begun...';
         }
         if (window.timerSecondsLeft < window.initialSecondsLeft - 60) {
-            title.innerHTML = 'Wooohoo, one minute gone..'
+            //title.innerHTML = 'Wooohoo, one minute gone..'
         }
         if (window.timerSecondsLeft < window.initialSecondsLeft - 60 * 2) {
-            title.innerHTML = 'Wooohoo, countless minutes gone..'
+            //title.innerHTML = 'Wooohoo, countless minutes gone..'
         }
         if (window.timerSecondsLeft < window.initialSecondsLeft - 60 * 3) {
-            title.innerHTML = 'Wooohoo, countless minutes gone..'
+            //title.innerHTML = 'Wooohoo, countless minutes gone..'
         }
     }
 
@@ -155,28 +183,7 @@ function startTimer(duration, display) {
 
         display.textContent = minutes + ":" + seconds;
 
-        if (--timer < 0) 
-        {
-            console.log("Timer is at 0. The value of isWork is " + isWork);
-        	var audio = new Audio('Dog Woof-SoundBible.com.mp3');
-                    audio.play();
-            if(isWork == true)
-            {
-        	    //timer = duration;
-        	    timer = 25 * 60;
-        	    //timer = 2 * 60;
-        	    isWork = false;
-        	    getRandomCorgi();
-
-            }
-            else
-            {
-            	timer = 5 * 60;
-            	//timer = 1 * 60;
-            	isWork = true;
-            	getRandomCorgi();
-            }
-        }
+        
     }, 1000);
 }
 
