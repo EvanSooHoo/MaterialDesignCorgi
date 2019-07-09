@@ -30,13 +30,16 @@
 
     btnStop.addEventListener('click', () => {
         if (window.timerStatus === 1) {
+
             iconPause.classList.remove('fa-pause-circle');
+            console.log("You hit the pause button");
             iconPause.classList.add('fa-play-circle');
             window.timerStatus = 0;
         } else if (window.timerStatus === 0) {
             iconPause.classList.remove('fa-play-circle');
             iconPause.classList.add('fa-pause-circle');
             window.timerStatus = 1;
+            
         }
     });
 
@@ -73,7 +76,7 @@
     function calculateTimer() {
         if (window.timerStatus === 1) {
             window.timerSecondsLeft--;
-            upateTitle();
+            
         }
         if (window.timerSecondsLeft >= 0) {
             minutes.innerText = Math.floor(window.timerSecondsLeft / 60) >= 10 ? Math.floor(window.timerSecondsLeft / 60) : '0' + Math.floor(window.timerSecondsLeft / 60);
@@ -108,23 +111,7 @@
         }
     }
 
-    /**
-     * Update timer title
-     */
-    function upateTitle() {
-        if (window.timerSecondsLeft < window.initialSecondsLeft) {
-            //title.innerText = 'Yeah...! Countdown has begun...';
-        }
-        if (window.timerSecondsLeft < window.initialSecondsLeft - 60) {
-            //title.innerHTML = 'Wooohoo, one minute gone..'
-        }
-        if (window.timerSecondsLeft < window.initialSecondsLeft - 60 * 2) {
-            //title.innerHTML = 'Wooohoo, countless minutes gone..'
-        }
-        if (window.timerSecondsLeft < window.initialSecondsLeft - 60 * 3) {
-            //title.innerHTML = 'Wooohoo, countless minutes gone..'
-        }
-    }
+   
 
 
 const randomButton = document.querySelector('.random');
@@ -186,13 +173,14 @@ function startTimer(duration, display) {
         
     }, 1000);
 }
-
+/*
 window.onload = function () {
 
     var twentyFiveMinutes = 60 * 25,
     //var twentyFiveMinutes = .1 * 25,
-        display = document.querySelector('#time');
+    display = document.querySelector('#time'); //ES: current error - display is null
     startTimer(twentyFiveMinutes, display);
     isWork = false;
 };
+*/
 
