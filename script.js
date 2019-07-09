@@ -1,4 +1,6 @@
 //Heavily taken from open source codepen submission by Kostas https://codepen.io/kkoutoup/pen/wjZXPw
+//and janissil https://codepen.io/janisii/pen/EeKpjZ
+//public codepen pages are MIT licensed https://opensource.org/licenses/MIT
 
     window.timerStatus = -1; // timerStatus (-1 -> off; 1 -> on; 0 -> pause)
     window.timerTick = setInterval(calculateTimer, 1000);
@@ -15,6 +17,9 @@
     const minutes = document.querySelector('#minutes');
     const seconds = document.querySelector('#seconds');
     const title = document.querySelector('.title');
+
+    const randomButton = document.querySelector('.random');
+    var isWork = false;
 
     window.addEventListener('load', () => {
         setInitialTimer();
@@ -90,9 +95,10 @@
                     audio.play();
             if(isWork == true)
             {
-        	    //timer = duration;
         	    timer = 25 * 60;
         	    window.timerSecondsLeft = 25 * 60;
+        	    console.log("isWork is true, so change title to work session");
+        	    title.innerText = 'Work Session';
         	    //window.timerSecondsLeft = 30;
         	    //timer = 2 * 60;
         	    isWork = false;
@@ -103,6 +109,8 @@
             {
             	timer = 5 * 60;
             	window.timerSecondsLeft = 5 * 60;
+            	console.log("isWork is true, so change title to break session");
+            	title.innerText = 'Break Session';
             	//window.timerSecondsLeft = 5;
             	//timer = 1 * 60;
             	isWork = true;
@@ -110,12 +118,6 @@
             }
         }
     }
-
-   
-
-
-const randomButton = document.querySelector('.random');
-var isWork = true;
 
 getRandomCorgi();
 
