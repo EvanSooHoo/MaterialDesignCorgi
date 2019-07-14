@@ -5,7 +5,7 @@
     window.timerStatus = -1; // timerStatus (-1 -> off; 1 -> on; 0 -> pause)
     window.timerTick = setInterval(calculateTimer, 1000);
     window.initialMinutes = 25;
-    //window.initialMinutes = 1;
+    //window.initialMinutes = 1; //for temporary testing
     window.initialSeconds = 0;
     window.initialSecondsLeft = (parseInt(window.initialMinutes) * 60) + parseInt(window.initialSeconds);
     window.timerSecondsLeft = window.initialSecondsLeft;
@@ -37,7 +37,6 @@
         if (window.timerStatus === 1) {
 
             iconPause.classList.remove('fa-pause-circle');
-            console.log("You hit the pause button");
             iconPause.classList.add('fa-play-circle');
             window.timerStatus = 0;
         } else if (window.timerStatus === 0) {
@@ -55,9 +54,11 @@
         btnReset.style.display = 'none';
         iconPause.classList.remove('fa-play-circle');
         iconPause.classList.add('fa-pause-circle');
-        //title.innerText = 'Let the countdown begin!!';
         setInitialTimer();
         setTimerSecondsLeft();
+        //isWork = true; //TODO: Make reset change to work mode, without messing up cycling
+        //getRandomCorgi();
+        //title.innerText = 'Work Session';
     });
 
     /**
@@ -99,7 +100,7 @@
         	    window.timerSecondsLeft = 25 * 60;
         	    console.log("isWork is true, so change title to work session");
         	    title.innerText = 'Work Session';
-        	    //window.timerSecondsLeft = 30;
+        	    //window.timerSecondsLeft = 30; //for temporary testing
         	    //timer = 2 * 60;
         	    isWork = false;
         	    getRandomCorgi();
@@ -111,7 +112,7 @@
             	window.timerSecondsLeft = 5 * 60;
             	console.log("isWork is true, so change title to break session");
             	title.innerText = 'Break Session';
-            	//window.timerSecondsLeft = 5;
+            	//window.timerSecondsLeft = 5; //for temporary testing
             	//timer = 1 * 60;
             	isWork = true;
             	getRandomCorgi();
@@ -134,7 +135,6 @@ function getRandomCorgi(){
 function handleData(data){
   let url = data.message;
   console.log(url)
-  let breedName = 'corgi';
   document.getElementById('randomImageContainer').innerHTML = `<img alt="random image of a corgi" src='${url}'/>`;
   document.querySelector('.dogInfo').innerHTML = `<p class="h5">Random image of a corgi</p>`;
 }
@@ -157,32 +157,6 @@ function notifyUser(error){
     errorContainer.innerHTML = '';
     errorContainer.style.display ='none';
   },4000)
-  
-  
+   
 }
-
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
-
-        
-    }, 1000);
-}
-/*
-window.onload = function () {
-
-    var twentyFiveMinutes = 60 * 25,
-    //var twentyFiveMinutes = .1 * 25,
-    display = document.querySelector('#time'); //ES: current error - display is null
-    startTimer(twentyFiveMinutes, display);
-    isWork = false;
-};
-*/
 
