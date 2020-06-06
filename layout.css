@@ -15,5 +15,8 @@
 }
 
 body {
-  background-color: #87CEEB;
+  background-color: #03DAC6;
+}
+h1, h2 {
+  font-family: 'Roboto', sans-serif;
 }
