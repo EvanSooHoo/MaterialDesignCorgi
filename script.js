@@ -36,12 +36,12 @@
     btnStop.addEventListener('click', () => {
         if (window.timerStatus === 1) {
 
-            iconPause.classList.remove('fa-pause-circle');
-            iconPause.classList.add('fa-play-circle');
+            iconPause.classList.remove('stop');
+            iconPause.classList.add('start');
             window.timerStatus = 0;
         } else if (window.timerStatus === 0) {
-            iconPause.classList.remove('fa-play-circle');
-            iconPause.classList.add('fa-pause-circle');
+            iconPause.classList.remove('start');
+            iconPause.classList.add('stop');
             window.timerStatus = 1;
             
         }
@@ -52,8 +52,8 @@
         btnStart.style.display = 'inline-block';
         btnStop.style.display = 'none';
         btnReset.style.display = 'none';
-        iconPause.classList.remove('fa-play-circle');
-        iconPause.classList.add('fa-pause-circle');
+        iconPause.classList.remove('start');
+        iconPause.classList.add('stop');
         setInitialTimer();
         setTimerSecondsLeft();
         //isWork = true; //TODO: Make reset change to work mode, without messing up cycling
