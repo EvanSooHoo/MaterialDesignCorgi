@@ -10,27 +10,38 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap');
-</style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap');
+
+  </style>
 </head>
 <body>
   <div class="page">
-    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+    <header class="mdc-top-app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+          <div class="mdc-menu mdc-menu-surface">
+            <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+              <li class="mdc-list-item" role="menuitem">
+                <span class="mdc-list-item__text">A Menu Item</span>
+              </li>
+              <li class="mdc-list-item" role="menuitem">
+                <span class="mdc-list-item__text">Another Menu Item</span>
+              </li>
+            </ul>
+          </div>
           <span class="mdc-top-app-bar__title">Corgi Pomodoro</span>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Bookmark this page">bookmark</button>
-      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
-      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
-      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
-    </section>
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Bookmark this page">bookmark</button>
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
+        </section>
         
       </div>
     </header>
-     <br><br><br><br><br>
+    <br><br><br><br><br>
     <!--<center><h3 class="title is-6">Work Session</h3></center>-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap" rel="stylesheet">
     <center><h1>Work Session</h1></center>
@@ -60,26 +71,22 @@
             </md-button></center>
 
             <!--   PAUSE BUTTON   -->
-            <center><md-button
+            <center><button
               id="stop"
               class="button is-dark is-large">
-
-              <span id="icon-pause" class="material-icons">
-                pause_circle_filled
-              </span>
-            </md-button>
+              <i id="icon-pause" class="fa fa-pause"></i> 
+              <!--<i id="icon-pause" class="far fa-pause-circle"></i> -->
+              <!--<i class="fa fa-pause"></i>-->
+            </button>
 
             <!--  RESET BUTTON   -->
-
-            <md-button
-              id="reset"
-              class="button is-dark is-large">
-              <span 
-                  id="icon-reset"
-                  class="material-icons">
-                  autorenew_circle_filled
-              </span>
-          </md-button></center>
+            
+            <button
+            id="reset"
+            class="button is-dark is-large">
+            <!--<i class="fas fa-undo"></i>-->
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+          </button></center>
         </div>
 
       </div>
@@ -100,8 +107,8 @@
 
       </div>    
     </div>
-  </div>
 
+  </div>
   <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
