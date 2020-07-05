@@ -37,91 +37,161 @@
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
           <form action="https://www.etsy.com/market/corgi_bookmark/">
             <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Bookmark this page">
-            bookmark</button>
-          </form>
-          <form action="https://www.instagram.com/explore/tags/corgi/?hl=en">
-            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
-          </form>
-          <form action="https://www.adoptapet.com/s/adopt-a-corgi">
-            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
-          </form>
-          <form action="https://corgi-engine-docs.moremountains.com/">
-            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
-        </form>
-        </section>
-        
-      </div>
+              bookmark</button>
+            </form>
+            <form action="https://www.instagram.com/explore/tags/corgi/?hl=en">
+              <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
+            </form>
+            <form action="https://www.adoptapet.com/s/adopt-a-corgi">
+              <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+            </form>
+            <form action="https://corgi-engine-docs.moremountains.com/">
+              <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
+            </form>
+          </section>
 
-    </header>
-    
-    <br><br><br><br><br>
-    <!--<center><h3 class="title is-6">Work Session</h3></center>-->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap" rel="stylesheet">
-    <center><h1>Work Session</h1></center>
-    <section id="app" class="hero is-info is-fullheight is-bold"></center>
-      <div class="hero-body">
-        <div class="container has-text-centered">
-
-
-          <!--  THE TIMER NUMBERS  -->
-          <center><div id="timer">
-            <span id="minutes"></span>
-            <span id="middle">:</span>
-            <span id="seconds"></span>
-          </div></center>
-
-          <!--  THE BUTTONS  -->
-          <div id="buttons">
-
-            <!--  START BUTTON    -->
-            <center><md-button class="my-class"
-              id="start"
-              class="button is-dark is-large">
-              <span id="icon-start" class="material-icons">
-                play_circle_filled
-              </span>
-
-            </md-button></center>
-
-            <!--   PAUSE BUTTON   -->
-            <center><button
-              id="stop"
-              class="button is-dark is-large">
-              <i id="icon-pause" class="fa fa-pause"></i> 
-              <!--<i id="icon-pause" class="far fa-pause-circle"></i> -->
-              <!--<i class="fa fa-pause"></i>-->
-            </button>
-
-            <!--  RESET BUTTON   -->
-
-            <button
-            id="reset"
-            class="button is-dark is-large">
-            <!--<i class="fas fa-undo"></i>-->
-            <i class="fa fa-refresh" aria-hidden="true"></i>
-          </button></center>
         </div>
 
+      </header>
+
+      <br><br><br><br><br>
+      <!--<center><h3 class="title is-6">Work Session</h3></center>-->
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap" rel="stylesheet">
+      <center><h1>Work Session</h1></center>
+      <section id="app" class="hero is-info is-fullheight is-bold"></center>
+        <div class="hero-body">
+          <div class="container has-text-centered">
+
+
+            <!--  THE TIMER NUMBERS  -->
+            <center><div id="timer">
+              <span id="minutes"></span>
+              <span id="middle">:</span>
+              <span id="seconds"></span>
+            </div></center>
+
+            <!--  THE BUTTONS  -->
+            <div id="buttons">
+
+              <!--  START BUTTON    -->
+              <center><md-button class="my-class"
+                id="start"
+                class="button is-dark is-large">
+                <span id="icon-start" class="material-icons">
+                  play_circle_filled
+                </span>
+
+              </md-button></center>
+
+              <!--   PAUSE BUTTON   -->
+              <center><button
+                id="stop"
+                class="button is-dark is-large">
+                <i id="icon-pause" class="fa fa-pause"></i> 
+                <!--<i id="icon-pause" class="far fa-pause-circle"></i> -->
+                <!--<i class="fa fa-pause"></i>-->
+              </button>
+
+              <!--  RESET BUTTON   -->
+
+              <button
+              id="reset"
+              class="button is-dark is-large">
+              <!--<i class="fas fa-undo"></i>-->
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+            </button></center>
+          </div>
+
+        </div>
       </div>
+    </section>
+    <!--<img src="MediumCorgi.jpg" alt="Corgi">-->
+
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-10 offset-md-1">
+
+          <p id="dogInfo"></p>
+          <center><h2>Random corgi</h2></center>
+          <div class="alert alert-danger" role="alert"></div>
+          <center><div id="randomImageContainer"></div></center>
+          <center><p class="dogInfo h5">Random image of a...</p></center>
+          <center><p>(Courtesy of the Doge API)</p></center>
+
+        </div>    
+      </div>
+
     </div>
-  </section>
-  <!--<img src="MediumCorgi.jpg" alt="Corgi">-->
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell"><span>
+              <form action="https://dog.ceo/dog-api/">
+                 <button class="mdc-button">
+                 <div class="mdc-button__ripple"></div>
+                 <i class="material-icons mdc-button__icon" aria-hidden="true">pets</i>
+                  <span class="mdc-button__label">Powered by the Dog API</span></span></div>
+                </button>
+              </form>
+             <div class="mdc-layout-grid__cell"><span>
+              <form action="https://medium.com/@evan_soohoo/corgi-pomodoro-a-lame-excuse-to-learn-basic-javascript-46fb9e879144">
+                <button class="mdc-button">
+                 <div class="mdc-button__ripple"></div>
+                 <i class="material-icons mdc-button__icon" aria-hidden="true">mood</i>
+                 <span class="mdc-button__label">Why though?</span></span></div>
 
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-md-10 offset-md-1">
+               </button>
+              </form>
+           </div>
+         </div>
+         <div class="mdc-layout-grid__cell">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell"><span>
+              <form action="https://irarelypostanything.tumblr.com/post/166734046612/golden-field-of-corgis">
+                 <button class="mdc-button">
+                 <div class="mdc-button__ripple"></div>
+                 <i class="material-icons mdc-button__icon" aria-hidden="true">edit</i>
+                  <span class="mdc-button__label">Golden Fields of Corgis</span></span></div>
+                </button>
+              </form>
+             <div class="mdc-layout-grid__cell"><span>
+              <form action="https://en.wikipedia.org/wiki/Pomodoro_Technique">
+                <button class="mdc-button">
+                 <div class="mdc-button__ripple"></div>
+                 <i class="material-icons mdc-button__icon" aria-hidden="true">timer</i>
+                 <span class="mdc-button__label">The pomodoro explained</span></span></div>
 
-        <p id="dogInfo"></p>
-        <center><h2>Random corgi</h2></center>
-        <div class="alert alert-danger" role="alert"></div>
-        <center><div id="randomImageContainer"></div></center>
-        <center><p class="dogInfo h5">Random image of a...</p></center>
-        <center><p>(Courtesy of the Doge API)</p></center>
+               </button>
+              </form>
+              
 
-      </div>    
-    </div>
+           </div>
 
-  </div>
-  <script type="text/javascript" src="script.js"></script>
-</body>
-</html>
+
+         </div>
+         <div class="mdc-layout-grid__cell">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell"><span>
+              <form action="http://soundbible.com/75-Dog-Woof.html">
+                 <button class="mdc-button">
+                 <div class="mdc-button__ripple"></div>
+                 <i class="material-icons mdc-button__icon" aria-hidden="true">play_arrow</i>
+                  <span class="mdc-button__label">Woof sound</span></span></div>
+                </button>
+              </form>
+             <div class="mdc-layout-grid__cell"><span>
+              <form action="https://www.flickr.com/photos/marc_dalangin/10758314616/in/photolist-hoFb83-28etb4B-2gE1Rzk-QTHHWR-aiGAtR-fc1eHb-HdSGBo-rVCgYe-poSRbV-7wo5jY-6Ey6Di-7VpStg-JndWGw-2e4iL66-2iFaMx2-KjW6f8-7QHfnb-bxQLzp-fVJE4q-7NLGvo-6ExV8a-fPTKZU-7LYSxP-eciS3s-6ExYca-HA5Tf9-6ECfcA-meCe4Z-6Ey5aa-6ECfxq-asGLwa-7Q1UgG-s6ebkN-6EC6T1-qFuxVW-nkVU56-gk1Zhg-9rCQXk-27iSVnw-FaYqQt-u8o3jd-v2zWjY-27VrEit-eV68Qx-2cZhk8i-FUAkJk-8ZSuAa-uNcJvd-qDCduq-2hnMqVf">
+                <button class="mdc-button">
+                 <div class="mdc-button__ripple"></div>
+                 <i class="material-icons mdc-button__icon" aria-hidden="true">wb_sunny</i>
+                 <span class="mdc-button__label">A corgi in the sun</span></span></div>
+
+               </button>
+              </form>
+           </div>
+         </div>
+         
+         <script type="text/javascript" src="script.js"></script>
+       </body>
+       </html>
